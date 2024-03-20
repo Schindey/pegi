@@ -1,0 +1,90 @@
+﻿<!-- exemple de formulaire -->   
+
+
+<!-- Utilités de la définition de la langue :
+     - pour les moteurs de recherches afin qu'ils fournissent des résultats plus adaptés
+     - pour simplifier l'accessibilité (handicapés, ...). Les synthétiseurs vocaux peuvent par exemple prendre le bon accent -->
+<!doctype html>
+<html lang="fr-FR">
+	<head>
+		<title>Formulaire exemple</title>  <!-- pour le titre de l'onglet dans le navigateur, titre du favori, moteurs de recherche -->
+		<meta charset="utf-8" />  <!-- jeu de caractères qui permet de donner directement les cacactères accentués, dans éditeur encodage aussi en UTF-8 -->
+		<meta name="author" content="SIO1 Schuman" />
+		<meta name="description" content="Les widgets de formulaire" />
+		<link rel="stylesheet" href="styles.css" />   <!-- fichier feuille de style (CSS)  --> 
+		<script src="formulaire.js"></script>         <!-- fichier de code javascript  --> 
+	</head>
+	<body>
+		<header><h3>Formulaire exemple</h3></header>
+		<section>
+			<!--  le formulaire  -->
+			<form method="post" action="traiterFormulaire1Serveur.php" name="frmControles" id="frmControles">
+				
+				<fieldset> 
+					<legend>Widgets</legend> 
+					<div>
+						<label for="txtZone">Zone de texte</label>
+						<input type="text" name="txtZone" id="txtZone" minlength="4" maxlength="30" size="32" title="De 4 à 30 caractères">
+					</div>
+					<div>
+						<label for="txtCodePostal">Zone de texte avec contrôle Code postal</label>
+						<input type="text" name="txtCodePostal" id="txtCodePostal" size="5" maxlength="5"  pattern="[0-9]{5}" title="5 chiffres">
+					</div>
+					<div>					 
+						<label for="txtNombre">Nombre</label>
+						<input type="number" name="txtNombre" id="txtNombre" value="1" min="1" max="60">
+					</div>
+					<div>
+						<label for="txtEmail">Email</label>
+						<input type="email" name="txtEmail" id="txtEmail" pattern=".+@gmail.com" placeholder="exemple@gmail.com" title="exemple@gmail.com" size="30">					
+					</div>
+					<div>
+						<label for="txtUrl">Url</label>
+						<input type="url" name="txtUrl" id="txtUrl" placeholder="https://exemple.com" pattern="https://.*" title="https://exemple.com" size="30">				
+					</div>
+					<div>	
+						<label for="txtTelephone">Téléphone</label>
+						<input type="tel" name="txtTelephone" id="txtTelephone" pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" placeholder="00 00 00 00 00">					
+					</div>
+					<div>	
+						<label for="txtDate">Date</label>
+						<input type="date" name="txtDate" id="txtDate" value="2019-01-07" min="2018-01-01" max="2019-12-31">					
+					</div>
+					<div>
+						<label for="blocRadioBouton">Radio bouton</label>
+						<fieldset id="blocRadioBouton" class="choix" size="60"> 
+							<legend>Choix exclusif</legend>
+								<input type="radio" name="optChoixUnique" id="optChoixUnique1" value="1" checked> <label for="optChoixUnique1">Madame</label></br>
+								<input type="radio" name="optChoixUnique" id="optChoixUnique2" value="2"> <label for="optChoixUnique2">Monsieur</label></br>
+						</fieldset>
+					</div>
+					<div>	
+						<label for="chkCase">Case à cocher</label>
+						<input type="checkbox" name="chkCase" id="chkCase">					
+					</div>
+					<div>	
+						<label for="lstProfession">Liste déroulante</label> 
+						<select name="lstProfession" id="lstProfession" size="1">
+							<option  value=1> Commercial</option>
+							<option selected value=2> Développeur web</option>
+							<option value=3> Technicien réseau</option>
+						</select>
+					</div>
+					
+				</fieldset>
+			
+				<div>
+					<label for="cmdValider">Bouton d'envoi</label>
+					<input type="submit" name="cmdValider" id="cmdValider" value="Valider">
+				</div>
+				<div>	
+					<label for="brAnnuler">Bouton de réinitialisation</label>
+					<input type="reset" name="brAnnuler" id="brAnnuler" value="Annuler">
+				</div>
+
+			</form>
+		</section>
+		
+		<footer><h4>Pied de page</h4></footer>
+	</body>
+</html>
